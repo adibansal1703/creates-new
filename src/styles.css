@@ -1,0 +1,277 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Premium Editorial Design System
+ *
+ * Inspired by luxury personal brands, high-end creative agencies,
+ * modern magazines, and sophisticated portfolio websites.
+ *
+ * Color Philosophy:
+ * - Warm ivory background (#F8F4EE)
+ * - Soft beige and champagne accents
+ * - Dark charcoal text
+ * - Occasional muted gold accents
+ * - Minimal color usage
+ *
+ * Typography:
+ * - Elegant serif for major headings
+ * - Clean sans-serif for interface elements
+ * - Large editorial headlines
+ * - Strong visual hierarchy
+ *
+ * Layout:
+ * - Full-width hero sections
+ * - Large whitespace
+ * - Magazine-inspired compositions
+ * - Premium visual storytelling
+ */
+
+@theme inline {
+  /* Typography - Editorial */
+  --font-serif: "Cormorant Garamond", "Playfair Display", Georgia, serif;
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+  /* Border Radius - More rounded, organic */
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.25rem;
+  --radius-2xl: 1.5rem;
+  --radius-3xl: 1.75rem;
+  --radius-full: 9999px;
+
+  /* Color Mapping */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  /* Premium Editorial Palette - Light Mode */
+  /* Warm ivory background */
+  --background: oklch(0.97 0.008 88);
+  /* Dark charcoal text */
+  --foreground: oklch(0.18 0.02 45);
+  /* Pure white cards for contrast */
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.18 0.02 45);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.18 0.02 45);
+
+  /* Primary - Soft champagne/beige accent */
+  --primary: oklch(0.65 0.05 75);
+  --primary-foreground: oklch(0.18 0.02 45);
+
+  /* Secondary - Warm beige */
+  --secondary: oklch(0.94 0.015 85);
+  --secondary-foreground: oklch(0.18 0.02 45);
+
+  /* Muted - Soft ivory */
+  --muted: oklch(0.95 0.012 88);
+  --muted-foreground: oklch(0.45 0.02 45);
+
+  /* Accent - Muted gold */
+  --accent: oklch(0.7 0.08 75);
+  --accent-foreground: oklch(0.18 0.02 45);
+
+  /* Destructive - Muted red */
+  --destructive: oklch(0.55 0.15 25);
+  --destructive-foreground: oklch(0.98 0.01 85);
+
+  /* Borders - Subtle warm gray */
+  --border: oklch(0.88 0.015 85 / 0.5);
+  --input: oklch(0.92 0.012 88);
+  --ring: oklch(0.65 0.05 75);
+
+  /* Chart Colors - Muted earth tones */
+  --chart-1: oklch(0.65 0.05 75);
+  --chart-2: oklch(0.55 0.08 45);
+  --chart-3: oklch(0.7 0.08 75);
+  --chart-4: oklch(0.5 0.06 40);
+  --chart-5: oklch(0.6 0.04 50);
+
+  /* Sidebar */
+  --sidebar: oklch(0.98 0.008 88);
+  --sidebar-foreground: oklch(0.18 0.02 45);
+  --sidebar-primary: oklch(0.65 0.05 75);
+  --sidebar-primary-foreground: oklch(0.18 0.02 45);
+  --sidebar-accent: oklch(0.94 0.015 85);
+  --sidebar-accent-foreground: oklch(0.18 0.02 45);
+  --sidebar-border: oklch(0.88 0.015 85 / 0.5);
+  --sidebar-ring: oklch(0.65 0.05 75);
+
+  /* Shadows - Subtle, refined */
+  --shadow-subtle: 0 1px 2px oklch(0 0 0 / 0.04);
+  --shadow-medium: 0 2px 8px oklch(0 0 0 / 0.06);
+  --shadow-elevated: 0 4px 16px oklch(0 0 0 / 0.08);
+}
+
+.dark {
+  /* Premium Editorial Palette - Dark Mode */
+  --background: oklch(0.15 0.02 45);
+  --foreground: oklch(0.96 0.008 88);
+  --card: oklch(0.2 0.025 45);
+  --card-foreground: oklch(0.96 0.008 88);
+  --popover: oklch(0.2 0.025 45);
+  --popover-foreground: oklch(0.96 0.008 88);
+
+  /* Primary - Warmer champagne in dark mode */
+  --primary: oklch(0.7 0.06 75);
+  --primary-foreground: oklch(0.15 0.02 45);
+
+  /* Secondary - Warm dark */
+  --secondary: oklch(0.28 0.035 45);
+  --secondary-foreground: oklch(0.96 0.008 88);
+
+  /* Muted - Dark warm */
+  --muted: oklch(0.28 0.035 45);
+  --muted-foreground: oklch(0.7 0.04 45);
+
+  /* Accent - Warmer gold */
+  --accent: oklch(0.75 0.08 75);
+  --accent-foreground: oklch(0.15 0.02 45);
+
+  /* Destructive */
+  --destructive: oklch(0.6 0.18 25);
+  --destructive-foreground: oklch(0.96 0.008 88);
+
+  /* Borders */
+  --border: oklch(0.32 0.035 45 / 0.5);
+  --input: oklch(0.28 0.035 45);
+  --ring: oklch(0.7 0.06 75);
+
+  /* Chart Colors - Dark Mode */
+  --chart-1: oklch(0.7 0.06 75);
+  --chart-2: oklch(0.6 0.08 45);
+  --chart-3: oklch(0.75 0.08 75);
+  --chart-4: oklch(0.55 0.06 40);
+  --chart-5: oklch(0.65 0.04 50);
+
+  /* Sidebar - Dark Mode */
+  --sidebar: oklch(0.2 0.025 45);
+  --sidebar-foreground: oklch(0.96 0.008 88);
+  --sidebar-primary: oklch(0.7 0.06 75);
+  --sidebar-primary-foreground: oklch(0.15 0.02 45);
+  --sidebar-accent: oklch(0.28 0.035 45);
+  --sidebar-accent-foreground: oklch(0.96 0.008 88);
+  --sidebar-border: oklch(0.32 0.035 45 / 0.5);
+  --sidebar-ring: oklch(0.7 0.06 75);
+
+  /* Shadows - Dark Mode */
+  --shadow-subtle: 0 1px 2px oklch(0 0 0 / 0.3);
+  --shadow-medium: 0 2px 8px oklch(0 0 0 / 0.4);
+  --shadow-elevated: 0 4px 16px oklch(0 0 0 / 0.5);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-feature-settings: "cv11", "ss01";
+    -webkit-font-smoothing: antialiased;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Editorial Typography */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-serif);
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+    font-weight: 500;
+  }
+
+  h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    letter-spacing: -0.03em;
+  }
+
+  h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+  }
+
+  h3 {
+    font-size: clamp(1.5rem, 3vw, 2.25rem);
+  }
+
+  p,
+  span,
+  div,
+  button,
+  input,
+  textarea {
+    font-family: var(--font-sans);
+  }
+}
+
+@layer utilities {
+  .text-elegant {
+    color: var(--espresso);
+  }
+  .bg-surface {
+    background-color: var(--card);
+  }
+  .bg-surface-subtle {
+    background-color: var(--muted);
+  }
+  .shadow-subtle {
+    box-shadow: var(--shadow-subtle);
+  }
+  .shadow-medium {
+    box-shadow: var(--shadow-medium);
+  }
+  .shadow-elevated {
+    box-shadow: var(--shadow-elevated);
+  }
+  .border-subtle {
+    border-color: var(--border);
+  }
+  .text-muted-elegant {
+    color: var(--muted-foreground);
+  }
+}
